@@ -49,7 +49,7 @@ app = Client("TeraBox_Leech_Group", api_id=api_id, api_hash=api_hash, bot_token=
 @app.on_message(filters.command("start"))
 async def start_command(client, message):
     sticker_message = await message.reply_sticker("CAACAgIAAxkBAAEYonplzwrczhVu3I6HqPBzro3L2JU6YAACvAUAAj-VzAoTSKpoG9FPRjQE")
-    await asyncio.sleep()
+    await asyncio.sleep(2)
     await sticker_message.delete()
     user_mention = message.from_user.mention
     reply_message = f"ᴡᴇʟᴄᴏᴍᴇ, {user_mention}.\n\n🌟 ɪ ᴀᴍ ᴀ ᴛᴇʀᴀʙᴏx ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ʙᴏᴛ. sᴇɴᴅ ᴍᴇ ᴀɴʏ ᴛᴇʀᴀʙᴏx ʟɪɴᴋ ɪ ᴡɪʟʟ ᴅᴏᴡɴʟᴏᴀᴅ ᴡɪᴛʜɪɴ ғᴇᴡ sᴇᴄᴏɴᴅs ᴀɴᴅ sᴇɴᴅ ɪᴛ ᴛᴏ ʏᴏᴜ ✨."
@@ -74,7 +74,7 @@ async def is_user_member(client, user_id):
 async def handle_message(client, message: Message):
     user_id = message.from_user.id
     user_mention = message.from_user.mention
-    is_member = await is_user_member(client, user_id)
+    is_member = await is_user_member(client, -1002159641904)
 
     if not is_member:
         join_button = InlineKeyboardButton("𝙂𝙍𝙊𝙐𝙋 ❤️‍🔥", url="https://t.me/PBX1_BOTS")
