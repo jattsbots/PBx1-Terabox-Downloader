@@ -74,7 +74,7 @@ async def is_user_member(client, user_id):
 async def handle_message(client, message: Message):
     user_id = message.from_user.id
     user_mention = message.from_user.mention
-    is_member = await is_user_member(client, -1002159641904)
+    is_member = await is_user_member(client, user_id)
 
     if not is_member:
         join_button = InlineKeyboardButton("𝙂𝙍𝙊𝙐𝙋 ❤️‍🔥", url="https://t.me/PBX1_BOTS")
