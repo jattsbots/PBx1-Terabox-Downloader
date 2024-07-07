@@ -53,8 +53,8 @@ async def start_command(client, message):
     await sticker_message.delete()
     user_mention = message.from_user.mention
     reply_message = f"ᴡᴇʟᴄᴏᴍᴇ, {user_mention}.\n\n🌟 ɪ ᴀᴍ ᴀ ᴛᴇʀᴀʙᴏx ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ʙᴏᴛ. sᴇɴᴅ ᴍᴇ ᴀɴʏ ᴛᴇʀᴀʙᴏx ʟɪɴᴋ ɪ ᴡɪʟʟ ᴅᴏᴡɴʟᴏᴀᴅ ᴡɪᴛʜɪɴ ғᴇᴡ sᴇᴄᴏɴᴅs ᴀɴᴅ sᴇɴᴅ ɪᴛ ᴛᴏ ʏᴏᴜ ✨."
-    join_button = InlineKeyboardButton("ᴊᴏɪɴ ❤️🚀", url="https://t.me/PBX1_BOTS")
-    developer_button = InlineKeyboardButton("ᴅᴇᴠᴇʟᴏᴘᴇʀ ⚡️", url="https://t.me/PBX1_OP")
+    join_button = InlineKeyboardButton("𝙂𝙍𝙊𝙐𝙋 ❤️‍🔥", url="https://t.me/PBX1_BOTS")
+    developer_button = InlineKeyboardButton("𝘿𝙀𝙑𝙀𝙇𝙊𝙋𝙀𝙍 😎", url="https://t.me/PBX1_OP")
     reply_markup = InlineKeyboardMarkup([[join_button, developer_button]])
     await message.reply_text(reply_message, reply_markup=reply_markup)
 
@@ -77,24 +77,24 @@ async def handle_message(client, message: Message):
     is_member = await is_user_member(client, user_id)
 
     if not is_member:
-        join_button = InlineKeyboardButton("ᴊᴏɪɴ ❤️🚀", url="https://t.me/PBX1_BOTS")
+        join_button = InlineKeyboardButton("𝙂𝙍𝙊𝙐𝙋 ❤️‍🔥", url="https://t.me/PBX1_BOTS")
         reply_markup = InlineKeyboardMarkup([[join_button]])
-        await message.reply_text("ʏᴏᴜ ᴍᴜsᴛ ᴊᴏɪɴ ᴍʏ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ.", reply_markup=reply_markup)
+        await message.reply_text("𝙔𝙤𝙪 𝙈𝙪𝙨𝙩 𝙅𝙤𝙞𝙣 𝙈𝙮 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙏𝙤 𝙐𝙨𝙚 𝙈𝙚 😁", reply_markup=reply_markup)
         return
 
     terabox_link = message.text.strip()
     if "terabox" not in terabox_link:
-        await message.reply_text("ᴘʟᴇᴀsᴇ sᴇɴᴅ ᴀ ᴠᴀʟɪᴅ ᴛᴇʀᴀʙᴏx ʟɪɴᴋ.")
+        await message.reply_text("𝙋𝙡𝙚𝙖𝙨𝙚 𝙎𝙚𝙣𝙙 𝘼 𝙑𝙖𝙡𝙞𝙙 𝙏𝙚𝙧𝙖𝘽𝙤𝙭 𝙇𝙞𝙣𝙠")
         return
 
-    reply_msg = await message.reply_text("sᴇɴᴅɪɴɢ ʏᴏᴜ ᴛʜᴇ ᴍᴇᴅɪᴀ...🤤")
+    reply_msg = await message.reply_text("𝙎𝙚𝙣𝙙𝙞𝙣𝙜 𝙔𝙤𝙪 𝙏𝙝𝙚 𝙈𝙚𝙙𝙞𝙖...🤤")
 
     try:
         file_path, thumbnail_path, video_title = await download_video(terabox_link, reply_msg, user_mention, user_id)
         await upload_video(client, file_path, thumbnail_path, video_title, reply_msg, dump_id, user_mention, user_id, message)
     except Exception as e:
         logging.error(f"Error handling message: {e}")
-        await reply_msg.edit_text("ᴅᴏᴡɴʟᴏᴀᴅ ғᴀɪʟᴇᴅ❗Mᴀʏ ʙᴇ ᴅᴜᴇ ᴛᴏ ғɪʟᴇ sɪᴢᴇ ᴏʀ ᴍᴜʟᴛɪᴘʟᴇ ᴠɪᴅᴇᴏs ɪɴ ᴛʜᴇ ʟɪɴᴋ")
+        await reply_msg.edit_text("𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙁𝙖𝙞𝙡𝙙 ❗️ 𝙈𝙖𝙮 𝘽𝙚 𝘿𝙪𝙚 𝙏𝙤 𝙁𝙞𝙡𝙚 𝙎𝙞𝙯𝙚 𝙊𝙧 𝙈𝙪𝙡𝙩𝙞𝙥𝙡𝙚 𝙑𝙞𝙙𝙚𝙤 𝙄𝙣 𝙏𝙝𝙚 𝙇𝙞𝙣𝙠 𝙏𝙧𝙮 𝘼𝙣𝙤𝙩𝙝𝙚𝙧 𝙇𝙞𝙣𝙠 👍")
 
 if __name__ == "__main__":
     keep_alive()
