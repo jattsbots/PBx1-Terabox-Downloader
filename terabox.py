@@ -72,8 +72,8 @@ async def is_user_member(client, user_id):
 
 @app.on_message(filters.text)
 async def handle_message(client, message: Message):
-    user_id = message.from_user.id
-    user_mention = message.from_user.mention
+    -1002159641904 = message.from_user.id
+    TeraBox_Leech_Group = message.from_user.mention
     is_member = await is_user_member(client, user_id)
 
     if not is_member:
