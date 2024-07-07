@@ -70,7 +70,7 @@ async def is_user_member(client, user_id):
         logging.error(f"Error checking membership status for user {user_id}: {e}")
         return False
 
-@app.on_message(filters.text)
+@app.on_message(filters.text & filters.group)
 async def handle_message(client, message: Message):
     user_id = message.from_user.id
     user_mention = message.from_user.mention
