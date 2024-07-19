@@ -15,7 +15,7 @@ aria2 = aria2p.API(
     )
 )
 async def download_video(url, reply_msg, user_mention, user_id):
-    response = requests.get(f"https://teraboxvideodownloader.nepcoderdevs.workers.dev/?url={url}")
+    response = requests.get(f"https://teraboxed-626f1ec7969a.herokuapp.com/api?url={url}")
     response.raise_for_status()
     data = response.json()
 
